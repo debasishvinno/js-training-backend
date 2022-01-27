@@ -1,9 +1,13 @@
 import express from "express";
 import fs from "fs";
 import { v4 as uuid } from "uuid";
+import cors from "cors";
+
 
 const app = express();
 const PORT = 2000;
+
+app.use(cors({origin: true}))
 app.use(express.json());
 
 app.use(async (req, res, next) => {
